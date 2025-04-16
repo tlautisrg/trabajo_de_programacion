@@ -1,3 +1,14 @@
+def pedir_nota(materia, nro_nota):
+    while True:
+        try:
+            nota = int(input(f"{nro_nota} nota de {materia}:"))
+            if 0 <= nota <= 10:
+                return nota
+            else:
+                print("si vas a mentir almenos que sea creible usa numeros del 1 al 10")
+        except ValueError:
+            print("si vas a mentir almenos que sea creible usa numeros del 1 al 10")
+
 usuario=input("ingrese usuario:")
 print("hola")
 print(usuario)
@@ -8,39 +19,38 @@ fisica=0
 materia=0
 continiu="true"
 
-
 acsion=input("si desea ingresar las notas de las materias ingrese (promedio)")
 
 while True: 
- 
+
  if acsion == ("promedio") and continiu==("true"):
   materia=input("selecsione la materia deseada(matematica)(quimica)(lengua)(fisica):")
 
  if materia == ("matematica"):
-  v3=int(input("primer nota de matematica:"))
-  v1=int(input("segundo nota de matematica:"))
-  v2=int(input("tercer nota de matematica:"))
+  v3=pedir_nota("matematica", "primer")
+  v1=pedir_nota("matematica", "segundo")
+  v2=pedir_nota("matematica", "tercer")
   matematica= (v1 + v2 + v3 )// 3
   print("la nota de matematica es:")
   print(matematica)
  if materia == ("quimica"):
-  v3=int(input("primer nota de quimica:"))
-  v1=int(input("segundo nota de quimica:"))
-  v2=int(input("tercer nota de quimica:"))
+  v3=pedir_nota("quimica", "primer")
+  v1=pedir_nota("quimica", "segundo")
+  v2=pedir_nota("quimica", "tercer")
   quimica= (v1 + v2 + v3) // 3
   print("la nota de quimica es:")
   print(quimica)
  if materia == ("lengua"):
-  v3=int(input("primer nota de lengua:"))
-  v1=int(input("segundo nota de lengua:"))
-  v2=int(input("tercer nota de lengua:"))
+  v3=pedir_nota("lengua", "primer")
+  v1=pedir_nota("lengua", "segundo")
+  v2=pedir_nota("lengua", "tercer")
   lengua= (v1 + v2 + v3) // 3
   print("la nota de lengua es:")
   print(lengua)
  if materia == ("fisica"):
-  v3=int(input("primer nota de fisica:"))
-  v1=int(input("segundo nota de fisica:"))
-  v2=int(input("tercer nota de fisica:"))
+  v3=pedir_nota("fisica", "primer")
+  v1=pedir_nota("fisica", "segundo")
+  v2=pedir_nota("fisica", "tercer")
   fisica= (v1 + v2 + v3) // 3
   print("la nota de fisica es:")
   print(fisica)
